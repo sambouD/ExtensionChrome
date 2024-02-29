@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="brand-title">	Configuration des alertes</div>
+    <div class="inputs">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" >
+      
+              <label>Date: </label>
+              <p-calendar formControlName="date" dateFormat="dd/mm/yy" ></p-calendar>
+
+
+          
+                  <div class="card flex justify-content-center">
+
+                    <p-dropdown  inputId="periode" optionLabel="name" formControlName="periode" [options]="perio" [showClear]="true" placeholder="Periode"></p-dropdown>
+                
+                  </div>
+                  
+                  <p-button label="Save" type="submit"  [raised]="true"></p-button>
+                  
+                  <p-button label="Retour" [raised]="true" severity="danger"></p-button>
+
+
+      </form>
+    </div>
+  </div>

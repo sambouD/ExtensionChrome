@@ -1,0 +1,29 @@
+<div class="card-container">
+    <div class="flex flex-column gap-3">
+        <div *ngFor="let category of categories" class="field-checkbox">
+            <br><br><br>
+            <p-radioButton [inputId]="category.key" name="category" [value]="category"  [(ngModel)]="selectedCategory" > </p-radioButton>
+            <label [for]="category.key" class="ml-2">{{ category.name }}</label>
+        </div>
+    </div>
+
+         <!-- Affiche le calendrier si la catégorie est "Quotidienne" -->
+    <div *ngIf="selectedCategory && selectedCategory.key === 'Q'" class="card flex justify-content-center gap-3">
+
+        <div  class="card flex justify-content-center  label-test">
+            <p-calendar [(ngModel)]= "date"></p-calendar>
+        </div>
+    </div>
+
+
+      <!-- Affiche les checkboxes si la catégorie est "Hebdomadaire" -->
+  <div *ngIf="selectedCategory && selectedCategory.key === 'H'" class="card flex justify-content-center gap-3">
+    <div class="flex align-items-center gap-1">
+        <div *ngFor="let day of days" class="field-checkbox">
+        <p-checkbox name="group" [value]="day" [(ngModel)]="selectedDays" [inputId]="day.key"></p-checkbox>
+        <label [for]="day.key">{{ day.name }}</label>
+    </div>
+
+
+  </div>
+</div>

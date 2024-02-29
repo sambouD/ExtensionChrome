@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="brand-title">	Message pour un utilisateur </div>
+    <div class="inputs">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" >
+      
+              <label>Date: </label>
+              <p-calendar formControlName="date" dateFormat="dd/mm/yy" ></p-calendar>
+
+          <br><br>
+                  <div class="card flex justify-content-center">
+
+                    <label>Message: </label>
+                    <input type="text" pInputText formControlName="text"/>
+
+                  </div>
+                  
+          <br><br>
+                  <p-button label="Save" type="submit"  [raised]="true"></p-button>
+                  
+                  <p-button label="Retour" [raised]="true" severity="danger"></p-button>
+
+
+      </form>
+    </div>
+  </div>
