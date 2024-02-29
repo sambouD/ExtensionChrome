@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <link rel="stylesheet" th:href="@{/css/periodiciteStyle.css}" />
+    <script th:src="@{/js/periodicte.js}"></script>
+
+</head>
+<body>
+
+
+<h1>Configuration des alertes</h1>
+
+<!--<form th:object="${periodicite}" th:action="@{/create-appointment}" method="get">
+
+    <label>Périodicité: </label>
+    <br>
+    <input type="radio" name="type" value="Quotidienne" id="quotidienneRadio" th:text="Quotidienne" />
+    <br>
+    <input type="radio" name="type" value="Hebdomadaire" id="hebdomadaireRadio" th:text="Hebdomadaire" />
+
+
+    <div id="heureDropdown" style="display: none;">
+        <label for="heure">Choisissez une heure :</label>
+        <select id="heure" name="heure">
+        </select>
+    </div>
+
+    <button type="submit">Enregistrer</button>
+    <a class="buttonRe" href="/">Retour</a>
+
+</form> -->
+
+<form th:action="@{/periodicites/new}" th:object="${periodicite}" method="post">
+    <label >Periodicite:</label>
+    <br><br>
+    <div class="radio-container">
+        <input type="radio" id="daily" name="typePeriodicite" th:value="Daily"/>
+        <label for="daily">Daily</label>
+
+        <span class="separator">|</span>
+
+        <div id="additionalOptions" class="additional-options" >
+
+            <label for="weeklyOption">Additional Option for Weekly:</label>
+            <label for="dailyTime"> Choisir l'heure: </label>
+            <select id="dailyTime" name="dailyTime">
+
+            </select>
+
+        </div>
+
+
+    </div>
+
+    <div>
+        <input type="radio" id="weekly" name="typePeriodicite" th:value="Weekly"/>
+        <label for="weekly">Weekly</label>
+
+        <div id="additionalOptionsWeekly" style="display: none;">
+            <label for="weeklyOption">Additional Option for Weekly:</label>
+            <input type="radio" id="weeklyOption" name="additionalOptionWeekly" th:value="Option1"/> Option 1
+            <input type="radio" id="weeklyOption2" name="additionalOptionWeekly" th:value="Option2"/> Option 2
+        </div>
+    </div>
+
+
+
+
+    <button type="submit">Enregistrer</button>
+    <a class="buttonRe" href="/">Retour</a>
+</form>
+
+</body>
+</html>

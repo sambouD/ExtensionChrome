@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang ="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Utilisateur message</title>
+<link rel="stylesheet" th:href="@{/css/bootstrapV5-min.css}">
+
+</head>
+<body>
+
+
+	
+	
+<div class="container">
+  <div class="brand-title">	Message pour un utilisateur</div>
+  <div class="inputs">
+<form th:object="${config}" th:action="@{/config/saveReminder}" method="post">
+			<label>Date: </label>
+			<input type="date" th:field="*{date}" placeholder="YYYY-MM-DD"/>
+		
+		   	<label >Texte: </label>
+ 			<input th:field="*{text}" placeholder="Veuillez écrire..." /> 
+	
+				<button type="submit" class="buttonAlignRight">Enregistrer</button>
+				<a class="buttonRe" href="/">Retour</a>	
+	</form>
+  </div>
+</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+/* styles.css */
+.radio-container {
+    display: inline-block;
+}
+
+.separator {
+    margin-left: 10px;
+}
+
+.additional-options {
+    display: none;
+}
